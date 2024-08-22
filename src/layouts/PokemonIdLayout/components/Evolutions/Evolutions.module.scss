@@ -1,0 +1,84 @@
+@import "lib/styles/styles.scss";
+
+$itemSizeDesktop: 96px;
+$itemSizeMobile: 64px;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    align-items: center;
+}
+
+.evolution {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, $itemSizeMobile);
+
+    @include breakpoint-min($sm) {
+        grid-template-columns: repeat(auto-fill, $itemSizeDesktop);
+    }
+
+    > div {
+        grid-row: 1;
+    }
+
+    &_children {
+        position: relative;
+    }
+
+    &_to {
+        position: absolute;
+        top: calc($itemSizeMobile/2);
+        left: -2rem;
+
+        @include breakpoint-min($sm) {
+            top: calc($itemSizeDesktop/2);
+        }
+    }
+}
+
+.evolution_meta {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: max-content;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    img {
+        width: $itemSizeMobile;
+        height: $itemSizeMobile;
+
+        @include breakpoint-min($sm) {
+            width: $itemSizeDesktop;
+            height: $itemSizeDesktop;
+        }
+    }
+
+    &_name {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        white-space: nowrap;
+        height: max-content;
+    }
+
+    &_trigger {
+        display: flex;
+        justify-content: center;
+        font-size: 0.5rem;
+        white-space: nowrap;
+
+        @include breakpoint-min($sm) {
+            font-size: 0.75rem;
+        }
+    }
+}
+
+.no_evolutions {
+    text-align: center;
+}

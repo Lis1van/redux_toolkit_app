@@ -1,0 +1,44 @@
+@import "lib/styles/styles.scss";
+
+.carouselNav {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: max-content;
+}
+
+.carouselNav_item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    animation-duration: 1s;
+    height: 100%;
+
+    @include breakpoint-min($md) {
+        margin-right: 2rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    img {
+        width: 3rem;
+    }
+
+    &:hover {
+        animation-name: bounce;
+    }
+
+    &--active {
+        cursor: default;
+        opacity: 0.75;
+        background-color: rgba(0, 0, 0, 0.25);
+        animation: none;
+    }
+}

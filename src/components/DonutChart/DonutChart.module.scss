@@ -1,0 +1,36 @@
+@import "lib/styles/styles.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+        white-space: nowrap;
+        font-weight: 600;
+    }
+}
+
+.donutChart {
+    position: relative;
+
+    &_circle {
+        animation: circle-chart-fill 1.5s reverse;
+        transform: rotate(-90deg);
+        transform-origin: center;
+    }
+}
+
+.centerText {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    width: max-content;
+    height: max-content;
+}

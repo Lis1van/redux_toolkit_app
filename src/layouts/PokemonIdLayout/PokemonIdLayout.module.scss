@@ -1,0 +1,52 @@
+@import "lib/styles/styles.scss";
+
+.layout {
+    position: relative;
+    margin: auto;
+    padding-bottom: 6rem; // account for navbar on bottom for mobile
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    @include breakpoint-min($sm) {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2,
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @include breakpoint-min($md) {
+        padding-top: 4rem; // account for navbar on top for desktop
+        padding-bottom: 4rem;
+    }
+}
+
+.content {
+    @include content();
+    margin: auto;
+}
+
+.loading {
+    position: absolute;
+    top: calc(100vh / 3);
+    left: 0;
+    right: 0;
+    margin: auto;
+}

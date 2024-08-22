@@ -1,0 +1,33 @@
+@import "lib/styles/styles.scss";
+
+.container {
+    display: flex;
+    margin-top: 0.5rem;
+
+    > div {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        width: fit-content;
+        color: #fff;
+        border-radius: 1rem;
+        padding: .25rem .5rem;
+        margin-right: 0.5rem;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.15);
+        font-size: 1rem;
+
+        @include breakpoint-min($sm) {
+            padding: 0.5rem 1rem;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: auto 0.45rem auto 0;
+    }
+}

@@ -1,0 +1,14 @@
+@mixin content() {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include breakpoint-min($md) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
