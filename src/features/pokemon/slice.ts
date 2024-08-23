@@ -84,5 +84,5 @@ export const pokemonSliceInitialState = {
 export const pokemonSliceReducer = {
     [name]: pokemonSlice.reducer,
 };
-
+ 
 export default pokemonSlice.reducer;

@@ -139,3 +139,18 @@ export const selectPokemonListData = createSelector(
         return generationPokemon
     }
 )
+export const selectPokemonsByType = createSelector(
+    selectPokemonData,
+    (_: any, type: string) => type,
+    (data: Pokemon[], type: string) => {
+        return data.filter(pokemon => pokemon?.types?.some(t => t.type.name === type));
+    }
+);
+
+export const selectPokemonsByAbility = createSelector(
+    selectPokemonData,
+    (_: any, ability: string) => ability,
+    (data: Pokemon[], ability: string) => {
+        return data.filter(pokemon => pokemon?.abilities?.some(a => a.ability.name === ability));
+    }
+);
