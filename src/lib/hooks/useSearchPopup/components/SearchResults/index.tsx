@@ -14,8 +14,8 @@ type Props = {
 }
 
 /**
- * Renders a list of pokemon with sprites and names
- * Clicking a pokemon will redirect to that pokemon's page
+ * Отображает список покемонов со спрайтами и именами.
+ * Нажатие на покемона приведет к перенаправлению на страницу этого покемона.
  */
 const SearchResults = ({ data = [], setIsOpen = () => {} }: Props) => (
     <div className={styles.container}>

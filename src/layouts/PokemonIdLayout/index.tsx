@@ -51,9 +51,9 @@ const PokemonIdLayout = () => {
         }
     }, [currPokemonData, pokemonId, dispatch])
 
-    // lets fetch some data from list endpoint
-    // to get some pagination data (count) thats needed for top nav
-    // to get prev/next pokemon
+    // позволяет получить некоторые данные из конечной точки списка
+    // чтобы получить данные о нумерации страниц (количество), необходимые для верхней навигации
+    // чтобы получить предыдущего/следующего покемона
     useEffect(() => {
         if (!pokemonData.length) {
             dispatch(

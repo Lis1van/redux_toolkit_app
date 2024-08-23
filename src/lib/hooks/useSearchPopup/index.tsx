@@ -4,9 +4,9 @@ import SearchTrigger from './components/SearchTrigger'
 import SearchPopup from './components/SearchPopup'
 
 /**
- * Handles the importing/exporting of the SearchPopup component
- * along with the Modal component which will handle the users search
- * query and display all results
+ * Управляет импортом/экспортом компонента SearchPopup.
+ * вместе с модальным компонентом, который будет обрабатывать поиск пользователей
+ * запрос и отображение всех результатов
  * @return {SearchTrigger, SearchPopup}
  */
 const useSearchPopup = () => {

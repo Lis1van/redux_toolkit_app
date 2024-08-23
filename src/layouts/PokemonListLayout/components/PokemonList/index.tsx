@@ -21,7 +21,7 @@ import styles from './PokemonList.module.scss'
 const PokemonList = () => {
     const navigate = useNavigate()
 
-    // prevent fetching data if were using a generation filter
+    // запретить получение данных, если мы используем фильтр генерации
     const filter = useSelector(selectFilter)
 
     const shouldFetch = filter === 'all'

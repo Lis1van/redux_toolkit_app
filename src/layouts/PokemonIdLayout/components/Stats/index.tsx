@@ -14,7 +14,7 @@ type Props = {
 const MAX_STAT_VALUE = 255
 
 /**
- * Renders a donut chart for each stat
+ * Отображает кольцевую диаграмму для каждого показателя.
  */
 const PokemonIdStats = ({ data = [] }: Props) => (
     <div className={styles.container}>

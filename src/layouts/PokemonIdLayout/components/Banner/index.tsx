@@ -17,7 +17,7 @@ type Props = {
 }
 
 /**
- * Main banner image for a pokemon along with its name, id, and types
+ * Изображение основного баннера покемона с его именем, идентификатором и типами.
  */
 const Banner = ({ name = '', id, color = '#fff' }: Props) => {
     const [showShiny, setShowShiny] = useState(false)
@@ -29,7 +29,7 @@ const Banner = ({ name = '', id, color = '#fff' }: Props) => {
 
     const imageUrl = showShiny ? shinySpriteUrl : spriteUrl
 
-    // get random number for animation
+    // получить случайное число для анимации
     const randomNumber = Math.floor(Math.random() * 2) + 1
 
     return (

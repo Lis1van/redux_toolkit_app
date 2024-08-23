@@ -19,13 +19,14 @@ type Props = {
 }
 /**
  *
- * @param fetchAction action creator to fetch data
- * @param dataSelector selector to get data from redux store
- * @param loadingSelector selector to get loading status from redux store
- * @param hasNextSelector selector to get hasNext status from redux store
+ * @param fetchAction создатель действия для получения данных
+ * Селектор @param dataSelector для получения данных из хранилища Redux
+ * Селектор @param loadingSelector для получения статуса загрузки из хранилища Redux
+ * Селектор @param hasNextSelector для получения статуса hasNext из хранилища redux
  * @returns
- *    InfiniteScroller {Component} to render in parent component
- *    data {any[]} children of the above <InfiniteScroller> rendered however the parent component defines
+ * InfiniteScroller {Component} для рендеринга в родительском компоненте
+ * данные {any[]} дочерние элементы вышеуказанного <InfiniteScroller> отображаются,
+ * однако родительский компонент определяет
  */
 const useInfiniteScroller = ({
     fetchAction = (props) => props,
@@ -58,8 +59,8 @@ const useInfiniteScroller = ({
 
     const fetchData = debounce(_fetchData, 200)
 
-    // on mount, we make sure there is enough data mounted to render a scrollbar
-    // so that a user can scroll down to trigger the infinite scroller
+    // при монтировании мы проверяем, что смонтировано достаточно данных для отображения полосы прокрутки
+    // чтобы пользователь мог прокрутить вниз и вызвать бесконечный скроллер
     useEffect(() => {
         const canScroll = document.body.scrollHeight > window.innerHeight
         if (!canScroll && hasNext && shouldFetch) {

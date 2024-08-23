@@ -18,7 +18,7 @@ const fetchPokemons = createAsyncThunk<
         try {
             const state: any = getState()
 
-            // pull offset from state if not provided
+            // извлекаем смещение из состояния, если оно не указано
             const offsetToUse = offset || state?.pokemon?.pagination?.offset
 
             const response = await fetch(

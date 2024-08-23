@@ -58,9 +58,9 @@ const pokemonSlice = createSlice({
             state.status = 'loading'
         })
         builder.addCase(fetchPokemon.fulfilled, (state, { payload }) => {
-            // lets update the pokemon data if available
-            // otherwise save it to a selectedPokemons array
-            // this way we dont pollute the main pokemon data
+            // позволяет обновить данные о покемонах, если они доступны
+            // в противном случае сохраняем его в массив selectedPokemons
+            // таким образом мы не загрязняем основные данные о покемонах
             const index = state.data.findIndex((p) => p?.name === payload?.name)
             if (index !== -1) {
                 state.data[index] = payload

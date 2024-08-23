@@ -11,8 +11,8 @@ type Props = {
 }
 
 /**
- * Renders a search icon which will render a search
- * input inside a popup when clicked
+ * Отображает значок поиска, который будет отображать поиск.
+ * ввод внутри всплывающего окна при нажатии
  */
 const SearchTrigger = ({ setIsOpen = () => {}, className = '' }: Props) => (
     <div

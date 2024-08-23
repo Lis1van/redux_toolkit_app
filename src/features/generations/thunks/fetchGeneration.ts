@@ -14,8 +14,8 @@ const fetchGeneration = createAsyncThunk<
             throw new Error('Invalid id')
         }
 
-        // check that the generation is not already in state
-        // we can check by checking that the object has an id
+        // проверьте, что поколение еще не находится в состоянии
+        // мы можем проверить, проверив, что у объекта есть идентификатор
         const state: any = getState()
 
         const generation = state?.generations?.data[id]

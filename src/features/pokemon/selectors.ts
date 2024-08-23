@@ -58,11 +58,11 @@ export const selectSelectedPokemons = createSelector(
     ({ selectedPokemons }) => selectedPokemons
 )
 
-// this selects pokemon from the main data array
-// but if its not found based on the id existing (api fetched),
-// then it will index into the selectedPokemon key
-// finds pokemon by matching id which can be
-// a number string or a pokemon's name
+// это выбирает покемонов из основного массива данных
+// но если он не найден по существующему идентификатору (получено API),
+// тогда он будет индексироваться в выбранный ключ Pokemon
+// находит покемона по идентификатору, который может быть
+// числовая строка или имя покемона
 export const selectPokemonById = createSelector(
     selectPokemonData,
     selectSelectedPokemons,
@@ -73,7 +73,8 @@ export const selectPokemonById = createSelector(
         let foundPokemon: Pokemon | undefined | null
 
         const isMatch = (pokemon: Pokemon) =>
-            // only if id is on the pokemon object, then we know it was fetched from the api
+            // только если идентификатор находится в объекте покемона, мы знаем,
+            // что он был получен из API
             pokemon?.id &&
             (pokemon.id === parseInt(id) ||
                 pokemon.name === id.toLocaleLowerCase())
@@ -90,8 +91,8 @@ export const selectPokemonById = createSelector(
     }
 )
 
-// used to filter pokemon by doing a simple case insensitive string includes check
-// with first letter match
+// используется для фильтрации покемонов путем выполнения простой строки без учета регистра, включающей проверку
+// с совпадением первой буквы
 export const selectFilteredPokemon = createSelector(
     selectPokemonData,
     (_: any, filter: string) => filter,
@@ -114,9 +115,9 @@ export const selectFilteredPokemon = createSelector(
     }
 )
 
-// based on the current filter string saved in store, we can fetch
-// all the available pokemon data currently in store
-// or return all the generational pokemon data coming from generations key
+// на основе текущей строки фильтра, сохраненной в хранилище, мы можем получить
+// все доступные на данный момент данные о покемонах в хранилище
+// или вернуть все данные о поколениях покемонов, полученные из ключа поколений
 export const selectPokemonListData = createSelector(
     selectFilter,
     selectPokemonData,
@@ -128,7 +129,7 @@ export const selectPokemonListData = createSelector(
 
         if (!generation) return []
 
-        // sort pokemon by id
+        // сортировать покемонов по идентификатору
         const generationPokemon = [...generation.pokemon_species].sort(
             (a, b) =>
                 parseInt(getPokemonIdFromUrl(a.url)) -

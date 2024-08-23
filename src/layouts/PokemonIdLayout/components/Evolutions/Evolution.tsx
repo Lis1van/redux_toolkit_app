@@ -18,7 +18,7 @@ type Props = {
 }
 
 /**
- * Recursive component to render evolution chain
+ * Рекурсивный компонент для рендеринга цепочки эволюции
  */
 const Evolution = ({ id, details = [], chain, name = '' }: Props) => {
     const { id: currentId } = useParams()

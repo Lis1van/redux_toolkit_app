@@ -19,9 +19,9 @@ type Option = {
 }
 
 /**
- * Handles filtering and displaying of pokemon list
- * Based on generational data
- * Also handles fetching of generations data
+ * Управляет фильтрацией и отображением списка покемонов.
+ * По данным поколений
+ * Также обрабатывает выборку данных о поколениях.
  */
 const FilterDropdown = () => {
     const dispatch = useAppDispatch()
@@ -55,9 +55,9 @@ const FilterDropdown = () => {
         }
     }, [dispatch, generationsCount])
 
-    // update filter in store when dropdown changes
-    // as well as fetch the generation data if it doesn't exist
-    // this requests cache logic is handled in the thunk
+    // обновляем фильтр в магазине при изменении раскрывающегося списка
+    // а также извлекаем данные генерации, если они не существуют
+    // логика кэширования этих запросов обрабатывается в переходнике
     useEffect(() => {
         if (selectedOption) {
             dispatch(setFilter(selectedOption.value))

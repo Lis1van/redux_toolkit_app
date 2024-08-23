@@ -20,8 +20,8 @@ type Props = {
 }
 
 /**
- * Fetches and lists out evolution tree for a given pokemon
- * Links to a pokemon in the tree if clicked
+ * Получает и перечисляет дерево эволюции для данного покемона.
+ * Ссылки на покемонов в дереве при нажатии
  */
 const Evolutions = ({ id }: Props) => {
     const dispatch = useAppDispatch()

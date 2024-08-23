@@ -25,10 +25,10 @@ type Props = {
 }
 
 /**
- * Uses modal to display a popup allowing the user to query
- * and view all pokemon that match the query
- * because pokeapi does not have any fuzzy search - when this is
- * opened, we just fetch all pokemon and filter on the client side
+ * Использует модальное окно для отображения всплывающего окна, позволяющего пользователю запрашивать
+ * и просмотреть всех покемонов, соответствующих запросу
+ * потому что у pokeapi нет никакого нечеткого поиска - когда это
+ * открыто, мы просто получаем всех покемонов и фильтруем на стороне клиента
  */
 const SearchPopup = ({ isOpen = false, setIsOpen = () => {} }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null)
@@ -45,17 +45,17 @@ const SearchPopup = ({ isOpen = false, setIsOpen = () => {} }: Props) => {
         selectFilteredPokemon(state, query)
     )
 
-    // focus ref on mount
+    // сфокусировать ссылку на монтировании
     useEffect(() => {
         if (isOpen) {
             inputRef.current?.focus()
         }
     }, [isOpen, inputRef])
 
-    // lets make sure we only fetch all pokemon once
-    // we achieve this by checking store for next value
-    // limit is just set to the count, or 2000 if 0
-    // offset is already saved in store from any other prev call
+    // давайте убедимся, что мы извлекаем всех покемонов только один раз
+    // мы достигаем этого, проверяя хранилище на наличие следующего значения
+    // лимит просто установлен на количество или 2000, если 0
+    // смещение уже сохранено в памяти от любого другого предыдущего вызова
     useEffect(() => {
         if (hasNext && isOpen && !isLoading) {
             dispatch(
