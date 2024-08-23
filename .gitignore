@@ -27,3 +27,8 @@ yarn-error.log*
 firebase.json
 
 .prettierrc
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/redux_toolkit_app.iml
+/.idea/vcs.xml
