@@ -3,7 +3,7 @@
 .layout {
     position: relative;
     margin: auto;
-    padding-bottom: 6rem; // account for navbar on bottom for mobile
+    padding-bottom: 6rem; // учетная запись для панели навигации внизу для мобильных устройств
 
     h1 {
         font-size: 1.5rem;
@@ -33,7 +33,7 @@
     }
 
     @include breakpoint-min($md) {
-        padding-top: 4rem; // account for navbar on top for desktop
+        padding-top: 4rem; // учетная запись для панели навигации сверху для рабочего стола
         padding-bottom: 4rem;
     }
 }
