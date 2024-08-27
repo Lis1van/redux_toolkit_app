@@ -12,17 +12,13 @@ type Props = {
     limit?: number
 }
 
-/**
- * Обработка бесконечной прокрутки и выборки данных
- * когда пользователь прокручивает страницу вниз
- */
+
 const InfiniteScroller = ({
     className = '',
     children = null,
     fetchData = () => {},
     loading = false,
 }: Props) => {
-    // - fetching for more data if the bottom is reached and there is more data to fetch
     const handleScroll = useCallback(() => {
         const { scrollTop, scrollHeight, clientHeight } =
             document.documentElement

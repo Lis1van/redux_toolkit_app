@@ -58,11 +58,6 @@ export const selectSelectedPokemons = createSelector(
     ({ selectedPokemons }) => selectedPokemons
 )
 
-// это выбирает покемонов из основного массива данных
-// но если он не найден по существующему идентификатору (получено API),
-// тогда он будет индексироваться в выбранный ключ Pokemon
-// находит покемона по идентификатору, который может быть
-// числовая строка или имя покемона
 export const selectPokemonById = createSelector(
     selectPokemonData,
     selectSelectedPokemons,
@@ -73,8 +68,7 @@ export const selectPokemonById = createSelector(
         let foundPokemon: Pokemon | undefined | null
 
         const isMatch = (pokemon: Pokemon) =>
-            // только если идентификатор находится в объекте покемона, мы знаем,
-            // что он был получен из API
+
             pokemon?.id &&
             (pokemon.id === parseInt(id) ||
                 pokemon.name === id.toLocaleLowerCase())
@@ -91,8 +85,6 @@ export const selectPokemonById = createSelector(
     }
 )
 
-// используется для фильтрации покемонов путем выполнения простой строки без учета регистра, включающей проверку
-// с совпадением первой буквы
 export const selectFilteredPokemon = createSelector(
     selectPokemonData,
     (_: any, filter: string) => filter,
@@ -115,9 +107,6 @@ export const selectFilteredPokemon = createSelector(
     }
 )
 
-// на основе текущей строки фильтра, сохраненной в хранилище, мы можем получить
-// все доступные на данный момент данные о покемонах в хранилище
-// или вернуть все данные о поколениях покемонов, полученные из ключа поколений
 export const selectPokemonListData = createSelector(
     selectFilter,
     selectPokemonData,
@@ -129,7 +118,6 @@ export const selectPokemonListData = createSelector(
 
         if (!generation) return []
 
-        // сортировать покемонов по идентификатору
         const generationPokemon = [...generation.pokemon_species].sort(
             (a, b) =>
                 parseInt(getPokemonIdFromUrl(a.url)) -

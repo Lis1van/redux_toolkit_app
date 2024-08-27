@@ -3,12 +3,6 @@ import React, { useState } from 'react'
 import SearchTrigger from './components/SearchTrigger'
 import SearchPopup from './components/SearchPopup'
 
-/**
- * Управляет импортом/экспортом компонента SearchPopup.
- * вместе с модальным компонентом, который будет обрабатывать поиск пользователей
- * запрос и отображение всех результатов
- * @return {SearchTrigger, SearchPopup}
- */
 const useSearchPopup = () => {
     const [isOpen, setIsOpen] = useState(false)
 

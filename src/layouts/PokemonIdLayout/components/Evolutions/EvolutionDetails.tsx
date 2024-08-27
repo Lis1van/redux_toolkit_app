@@ -9,9 +9,6 @@ type Props = {
     details?: EvolutionDetail[]
 }
 
-// в зависимости от имени триггера
-// значение может быть разным и включать разные формулировки
-// т.е. 'use-item' должен включать item.name для Use Item (item.name)
 const TRIGGER_MAP: {
     [key: string]: { key: string; text: string }[]
 } = {
@@ -45,11 +42,10 @@ const EvolutionDetails = ({ details = [] }: Props) => {
 
                 const triggerName = trigger?.name
 
-                // получить ключи для проверки в подробном объекте
+
                 const triggerKeysToCheck = TRIGGER_MAP[triggerName] || []
 
-                // проверяем ключи на предмет найденного значения, связанного с именем триггера
-                // и возвращаем первое найденное значение
+
                 const { value: triggerKeyValue, text } =
                     triggerKeysToCheck.reduce(
                         (foundValue: any, { key, text }) =>

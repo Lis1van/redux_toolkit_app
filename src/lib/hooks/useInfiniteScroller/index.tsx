@@ -17,17 +17,7 @@ type Props = {
     limit?: number
     shouldFetch?: boolean
 }
-/**
- *
- * @param fetchAction создатель действия для получения данных
- * Селектор @param dataSelector для получения данных из хранилища Redux
- * Селектор @param loadingSelector для получения статуса загрузки из хранилища Redux
- * Селектор @param hasNextSelector для получения статуса hasNext из хранилища redux
- * @returns
- * InfiniteScroller {Component} для рендеринга в родительском компоненте
- * данные {any[]} дочерние элементы вышеуказанного <InfiniteScroller> отображаются,
- * однако родительский компонент определяет
- */
+
 const useInfiniteScroller = ({
     fetchAction = (props) => props,
     dataSelector = (data = []) => data,
@@ -59,8 +49,6 @@ const useInfiniteScroller = ({
 
     const fetchData = debounce(_fetchData, 200)
 
-    // при монтировании мы проверяем, что смонтировано достаточно данных для отображения полосы прокрутки
-    // чтобы пользователь мог прокрутить вниз и вызвать бесконечный скроллер
     useEffect(() => {
         const canScroll = document.body.scrollHeight > window.innerHeight
         if (!canScroll && hasNext && shouldFetch) {

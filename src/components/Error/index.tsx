@@ -6,9 +6,7 @@ import sadPikachuImage from 'assets/images/sad-pikachu.png'
 
 import styles from './Error.module.scss'
 
-/**
- * Компонент ошибки, отображающий ссылку на домашнюю страницу.
- */
+
 const Error = () => (
     <div className={styles.error}>
         <p>An error occured</p>

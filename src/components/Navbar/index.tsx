@@ -10,9 +10,7 @@ type Props = {
     className?: string
 }
 
-/**
- * Липкая навигация, можно передавать детей для рендеринга
- */
+
 const Navbar = ({ color = '#fff', children = null, className = '' }: Props) => (
     <div
         className={cx(className, styles.container)}

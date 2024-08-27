@@ -8,11 +8,7 @@ import { getSpriteImageUrl } from 'lib/utils/image'
 import cx from 'classnames'
 import styles from './CarouselNav.module.scss'
 
-/**
- * Отобразит способ перехода к следующему
- * и предыдущие покемоны на основе текущего идентификатора
- * при рендеринге спрайтов
- */
+
 const CarouselNav = () => {
     const { id: pokemonId } = useParams()
     const navigate = useNavigate()
@@ -21,14 +17,12 @@ const CarouselNav = () => {
         selectPokemonById(state, pokemonId)
     )
 
-    // проверьте, что id — это число, если нет, значит, мы используем
-    // имя покемона, поэтому нам нужно преобразовать его в идентификатор
+
     const id = isNaN(Number(pokemonId))
         ? currPokemonData?.id
         : Number(pokemonId)
 
-    // убедитесь, что мы можем перейти к предыдущему или следующему варианту
-    // в зависимости от количества
+
     const count: number = useSelector(selectCount)
 
     const numberId = Number(id)

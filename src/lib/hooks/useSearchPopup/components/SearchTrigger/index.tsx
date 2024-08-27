@@ -10,10 +10,6 @@ type Props = {
     className?: string
 }
 
-/**
- * Отображает значок поиска, который будет отображать поиск.
- * ввод внутри всплывающего окна при нажатии
- */
 const SearchTrigger = ({ setIsOpen = () => {}, className = '' }: Props) => (
     <div
         className={cx(className, styles.searchTrigger)}

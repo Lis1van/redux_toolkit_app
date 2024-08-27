@@ -13,10 +13,6 @@ type Props = {
     setIsOpen?: (isOpen: boolean) => void
 }
 
-/**
- * Отображает список покемонов со спрайтами и именами.
- * Нажатие на покемона приведет к перенаправлению на страницу этого покемона.
- */
 const SearchResults = ({ data = [], setIsOpen = () => {} }: Props) => (
     <div className={styles.container}>
         {!!data.length ? (

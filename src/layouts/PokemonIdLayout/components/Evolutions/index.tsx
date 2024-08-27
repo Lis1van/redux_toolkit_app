@@ -19,10 +19,7 @@ type Props = {
     id: number | undefined
 }
 
-/**
- * Получает и перечисляет дерево эволюции для данного покемона.
- * Ссылки на покемонов в дереве при нажатии
- */
+
 const Evolutions = ({ id }: Props) => {
     const dispatch = useAppDispatch()
 

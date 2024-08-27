@@ -18,11 +18,6 @@ type Option = {
     value: string | number
 }
 
-/**
- * Управляет фильтрацией и отображением списка покемонов.
- * По данным поколений
- * Также обрабатывает выборку данных о поколениях.
- */
 const FilterDropdown = () => {
     const dispatch = useAppDispatch()
 
@@ -48,16 +43,12 @@ const FilterDropdown = () => {
 
     const [selectedOption, setSelectedOption] = useState<Option>(defaultValue)
 
-    // fetch generational data to use for dropdown
     useEffect(() => {
         if (!generationsCount) {
             dispatch(fetchGenerations())
         }
     }, [dispatch, generationsCount])
 
-    // обновляем фильтр в магазине при изменении раскрывающегося списка
-    // а также извлекаем данные генерации, если они не существуют
-    // логика кэширования этих запросов обрабатывается в переходнике
     useEffect(() => {
         if (selectedOption) {
             dispatch(setFilter(selectedOption.value))

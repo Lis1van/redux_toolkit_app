@@ -9,5 +9,4 @@ export const LOADING_STATUS = 'loading'
 export const READY_STATUS = 'ready'
 export const ERROR_STATUS = 'error'
 
-// номер для получения
 export const DEFAULT_LIMIT = 100

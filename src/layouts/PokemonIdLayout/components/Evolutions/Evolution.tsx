@@ -17,9 +17,7 @@ type Props = {
     name?: string
 }
 
-/**
- * Рекурсивный компонент для рендеринга цепочки эволюции
- */
+
 const Evolution = ({ id, details = [], chain, name = '' }: Props) => {
     const { id: currentId } = useParams()
 

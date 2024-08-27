@@ -24,12 +24,6 @@ type Props = {
     setIsOpen?: (isOpen: boolean) => void
 }
 
-/**
- * Использует модальное окно для отображения всплывающего окна, позволяющего пользователю запрашивать
- * и просмотреть всех покемонов, соответствующих запросу
- * потому что у pokeapi нет никакого нечеткого поиска - когда это
- * открыто, мы просто получаем всех покемонов и фильтруем на стороне клиента
- */
 const SearchPopup = ({ isOpen = false, setIsOpen = () => {} }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null)
 
@@ -45,17 +39,12 @@ const SearchPopup = ({ isOpen = false, setIsOpen = () => {} }: Props) => {
         selectFilteredPokemon(state, query)
     )
 
-    // сфокусировать ссылку на монтировании
     useEffect(() => {
         if (isOpen) {
             inputRef.current?.focus()
         }
     }, [isOpen, inputRef])
 
-    // давайте убедимся, что мы извлекаем всех покемонов только один раз
-    // мы достигаем этого, проверяя хранилище на наличие следующего значения
-    // лимит просто установлен на количество или 2000, если 0
-    // смещение уже сохранено в памяти от любого другого предыдущего вызова
     useEffect(() => {
         if (hasNext && isOpen && !isLoading) {
             dispatch(

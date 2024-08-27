@@ -10,10 +10,7 @@ type Props = {
     setIsOpen: (isOpen: boolean) => void
 }
 
-/**
- * Модальный компонент, который будет использоваться для отображения всплывающего окна.
- * Закрывается внешним щелчком мыши, клавишей Escape или нажатием кнопки закрытия.
- */
+
 const Modal = ({
     children = null,
     isOpen = false,
@@ -46,7 +43,7 @@ const Modal = ({
         setIsOpen(false)
     }
 
-    // прикрепить прослушиватели для внешнего щелчка и нажатия клавиши выхода из клавиатуры
+
     useEffect(() => {
         document.addEventListener('keydown', handleEscape)
         document.addEventListener('mousedown', handleOutsideClick)
